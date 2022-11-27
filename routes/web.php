@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UsersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index', ['title' => 'Koperasi']);
+});
+Route::controller(UsersController::class)->group(function () {
+    Route::get('/users', 'index');
+    Route::get('/users/list', 'getUsers')->name('users.list');
+    Route::get('/users/form', 'form');
+    Route::post('/users/add', 'add');
 });
