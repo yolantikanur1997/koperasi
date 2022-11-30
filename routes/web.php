@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PenggunaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
 
@@ -17,9 +18,12 @@ use App\Http\Controllers\UsersController;
 Route::get('/', function () {
     return view('index', ['title' => 'Koperasi']);
 });
-Route::controller(UsersController::class)->group(function () {
-    Route::get('/users', 'index');
-    Route::get('/users/list', 'getUsers')->name('users.list');
-    Route::get('/users/form', 'form');
-    Route::post('/users/add', 'add');
+Route::controller(PenggunaController::class)->group(function () {
+    Route::get('/pengguna', 'index');
+    Route::get('/pengguna/cari', 'cari');
+    Route::get('/pengguna/form', 'form');
+    Route::post('/pengguna/add', 'add');
+    Route::get('/pengguna/edit/{id}', 'edit');
+    Route::post('/pengguna/update/{id}', 'update');
+    Route::get('/pengguna/hapus/{id}', 'hapus');
 });

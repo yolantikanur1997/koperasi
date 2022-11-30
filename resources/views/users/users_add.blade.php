@@ -22,7 +22,7 @@
   @endif
 
   <div class="card-body">
-    <form method="POST" action="users/add">
+    <form method="POST" action="add">
       {{ csrf_field() }}
       
   <div class="form-group">

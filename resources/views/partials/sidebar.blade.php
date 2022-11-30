@@ -14,7 +14,7 @@
             <div class="profile clearfix">
               <div class="profile_info">
                 <span>Welcome,</span>
-                <h2>Yolantika Nur</h2>
+                <h2>Ety Sabindo</h2>
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -26,7 +26,22 @@
               <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
-                  <li><a href="/users"><i class="fa fa-users"></i> Users</a></li>
+                  <li><a href="/pengguna"><i class="fa fa-user"></i> Users</a></li>
+                </ul>
+                <ul class="nav side-menu">
+                  <li><a href="/users"><i class="fa fa-users"></i> Tujuan</a></li>
+                </ul>
+                <ul class="nav side-menu">
+                  <li><a href="/users"><i class="fa fa-money-check-dollar"></i> Bank</a></li>
+                </ul>
+                <ul class="nav side-menu">
+                  <li><a href="/users"><i class="fa fa-note-sticky"></i> Tagihan</a></li>
+                </ul>
+                <ul class="nav side-menu">
+                  <li><a href="/users"><i class="fa fa-note-sticky"></i> Faktur</a></li>
+                </ul>
+                <ul class="nav side-menu">
+                  <li><a href="/users"><i class="fa fa-note-sticky"></i> Pembayaran</a></li>
                 </ul>
               </div>
          
