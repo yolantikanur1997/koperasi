@@ -4,13 +4,30 @@ namespace App\Http\Controllers;
 
 use App\Models\Tujuan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TujuanController extends Controller
 {
     public function index(){
-        $tujuan = Tujuan::orderBy('id', 'desc')->paginate(10); 
+        $tujuan = Tujuan::orderBy('created_at', 'desc')->paginate(10); 
         return view('tujuan/index',['title' => 'Data Users','tujuan' => $tujuan]);
     }
+
+	public function cari(Request $request)
+	{
+	
+		$cari = $request->cari;
+ 
+		$tujuan = DB::table('tbl_tujuan')
+		->where('nama','like',"%".$cari."%")
+		->orWhere('penanggung_jawab','like',"%".$cari."%")
+		->orWhere('email','like',"%".$cari."%")
+		->orWhere('telepon','like',"%".$cari."%")
+		->paginate();
+
+        return view('tujuan/index',['title' => 'Data Tujuan','tujuan' => $tujuan]);
+        
+	}
 
     public function form(){
         return view('tujuan/tujuan_add',[

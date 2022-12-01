@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 class PenggunaController extends Controller
 {
     public function index(){
-        $pengguna = Pengguna::orderBy('id', 'desc')->paginate(10); 
+        $pengguna = Pengguna::orderBy('created_at', 'desc')->paginate(10); 
         return view('users/index',['title' => 'Data Users','pengguna' => $pengguna]);
     }
 

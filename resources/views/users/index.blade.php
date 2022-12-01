@@ -45,11 +45,18 @@
   </tr>
   @endforeach
 </table>  
-        Page: {{ $pengguna->currentPage() }}<br>
+
+<div class="row">
+  <div class="col-sm-6" style="float: left;">
+  Page: {{ $pengguna->currentPage() }}<br>
         Jumlah Data: {{ $pengguna->total() }}<br>
-        <!-- Data perhalaman: {{ $pengguna->perPage() }}<br> -->
-        <br>
-        {{ $pengguna->links() }}
+  </div>
+    <div class="col-sm-6" style="display: flex; justify-content: flex-end">
+  <div>{{ $pengguna->links() }}</div>
+</div>
+
+</div>
+
   </div>
 </div>
 
