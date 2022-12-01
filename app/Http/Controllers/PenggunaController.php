@@ -69,7 +69,7 @@ class PenggunaController extends Controller
 
 			// DB::table('Karyawan')->where('id',$id)->delete();
             $pengguna = Pengguna::where('id',$id)->delete();
-			return redirect('pengguna')->with('Hapus', 'Data Penggu Dihapus');
+			return redirect('pengguna')->with('Hapus', 'Data Pengguna Dihapus');
 
 	}
 }

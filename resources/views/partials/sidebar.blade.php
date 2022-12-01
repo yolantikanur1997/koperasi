@@ -29,7 +29,7 @@
                   <li><a href="/pengguna"><i class="fa fa-user"></i> Users</a></li>
                 </ul>
                 <ul class="nav side-menu">
-                  <li><a href="/users"><i class="fa fa-users"></i> Tujuan</a></li>
+                  <li><a href="/tujuan"><i class="fa fa-users"></i> Tujuan</a></li>
                 </ul>
                 <ul class="nav side-menu">
                   <li><a href="/users"><i class="fa fa-money-check-dollar"></i> Bank</a></li>
