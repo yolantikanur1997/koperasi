@@ -6,6 +6,16 @@
   <div class="card-header" style="width:100%;">
   {{ $title }}
   </div>
+  @if(session()->has('Hapus'))
+  <div class="alert alert-danger mt-2 mr-3 ml-3" role="alert">
+  {{ session('Hapus') }}
+</div>
+  @endif
+  @if(session()->has('Edit'))
+  <div class="alert alert-warning mt-2 mr-3 ml-3" role="alert">
+  {{ session('Edit') }}
+</div>
+  @endif
   <div class="card-body">
   <div class="form-group">
       <div class="row">

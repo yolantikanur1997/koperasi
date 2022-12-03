@@ -10,7 +10,7 @@
   {{ session('Sukses') }}
 </div>
   @endif
-
+ 
 
   <div class="card-body">
     <form method="POST" action="add">
@@ -26,41 +26,23 @@
         @enderror
   </div>
   <div class="form-group">
-    <label>Alamat</label>
-    <textarea class="form-control @error('alamat') is-invalid @enderror" id="alamat" name="alamat"></textarea>
-    @error('alamat')
+    <label>Akun</label>
+    <textarea class="form-control @error('akun') is-invalid @enderror" id="akun" name="akun"></textarea>
+    @error('akun')
         <div class="invalid-feedback">
           {{ $message }}
         </div>
         @enderror
   </div>
   <div class="form-group">
-    <label>Email</label>
-    <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email">
-    @error('email')
+    <label>Nomor Rekening</label>
+    <input type="nomor_rekening" class="form-control @error('nomor_rekening') is-invalid @enderror" id="nomor_rekening" name="nomor_rekening">
+    @error('nomor_rekening')
         <div class="invalid-feedback">
           {{ $message }}
         </div>
         @enderror
   </div>
-  <div class="form-group">
-    <label>Telepon</label>
-    <input type="text" class="form-control @error('telepon') is-invalid @enderror" id="telepon" name="telepon">
-    @error('telepon')
-        <div class="invalid-feedback">
-          {{ $message }}
-        </div>
-        @enderror  
-</div>
-  <div class="form-group">
-    <label>Penanggung Jawab</label>
-    <input type="text" class="form-control @error('penanggung_jawab') is-invalid @enderror" id="penanggung_jawab" name="penanggung_jawab">
-    @error('penanggung_jawab')
-        <div class="invalid-feedback">
-          {{ $message }}
-        </div>
-        @enderror  
-</div>
 
   <button type="submit" class="btn btn-primary">Simpan</button>
 

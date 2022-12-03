@@ -14,7 +14,7 @@
             <div class="profile clearfix">
               <div class="profile_info">
                 <span>Welcome,</span>
-                <h2>Ety Sabindo</h2>
+                <h2>{{session('nama')}}</h2>
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -32,7 +32,7 @@
                   <li><a href="/tujuan"><i class="fa fa-users"></i> Tujuan</a></li>
                 </ul>
                 <ul class="nav side-menu">
-                  <li><a href="/users"><i class="fa fa-money-check-dollar"></i> Bank</a></li>
+                  <li><a href="/bank"><i class="fa fa-money-check-dollar"></i> Bank</a></li>
                 </ul>
                 <ul class="nav side-menu">
                   <li><a href="/users"><i class="fa fa-note-sticky"></i> Tagihan</a></li>
@@ -61,8 +61,14 @@
                     </div>
                     <nav class="nav navbar-nav">
                     <ul class=" navbar-right">
-                      <li class="nav-item dropdown open" style="padding-left: 15px;"> Yolantika Nur
+                     
+                    <li class="nav-item dropdown open" style="padding-left: 15px;"> 
+                    <form action="/logout" method="POST">
+                      {{ csrf_field() }}
+                      <button type="submit" class="btn btn-danger" onclick="return confirm('Anda Yakin ingin Logout?')">Logout</button>
+                      </form>
                       </li>
+                      </form>
 
             
                     </ul>

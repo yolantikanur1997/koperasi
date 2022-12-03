@@ -41,7 +41,7 @@ class TujuanController extends Controller
 			'nama' => 'required',
 			'alamat' => 'required',
 			'email' => 'required|email|unique:users|max:255',
-			'telepon' => 'required',
+			'telepon' => 'required|numeric',
 			'penanggung_jawab' => 'required',
 		]);
 
