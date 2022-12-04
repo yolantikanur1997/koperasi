@@ -10,7 +10,7 @@ class TujuanController extends Controller
 {
     public function index(){
         $tujuan = Tujuan::orderBy('created_at', 'desc')->paginate(10); 
-        return view('tujuan/index',['title' => 'Data Users','tujuan' => $tujuan]);
+        return view('tujuan/index',['title' => 'Data Tujuan','tujuan' => $tujuan]);
     }
 
 	public function cari(Request $request)

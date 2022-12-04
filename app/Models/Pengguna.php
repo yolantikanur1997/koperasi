@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Pengguna extends Model
 {
@@ -14,6 +15,16 @@ class Pengguna extends Model
     protected $guarded = ['id'];
     
     use HasFactory;
+
+    public function tagihan(): HasMany
+    {
+        return $this->hasMany(Tagihan::class);
+    }
+
+    public function faktur(): HasMany
+    {
+        return $this->hasMany(Faktur::class);
+    }
 
    
 }

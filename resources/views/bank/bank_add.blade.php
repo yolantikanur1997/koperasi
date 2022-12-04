@@ -27,7 +27,7 @@
   </div>
   <div class="form-group">
     <label>Akun</label>
-    <textarea class="form-control @error('akun') is-invalid @enderror" id="akun" name="akun"></textarea>
+    <input type="text" class="form-control @error('akun') is-invalid @enderror" id="akun" name="akun">
     @error('akun')
         <div class="invalid-feedback">
           {{ $message }}

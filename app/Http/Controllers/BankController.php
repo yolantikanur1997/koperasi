@@ -43,7 +43,7 @@ class BankController extends Controller
 
 		Bank::create($validateData);
 
-		return redirect('bank/form')->with('Sukses', 'Data Tujuan Tersimpan');
+		return redirect('bank/form')->with('Sukses', 'Data Bank Tersimpan');
     }
 
     public function edit($id)

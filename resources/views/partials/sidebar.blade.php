@@ -35,10 +35,10 @@
                   <li><a href="/bank"><i class="fa fa-money-check-dollar"></i> Bank</a></li>
                 </ul>
                 <ul class="nav side-menu">
-                  <li><a href="/users"><i class="fa fa-note-sticky"></i> Tagihan</a></li>
+                  <li><a href="/tagihan"><i class="fa fa-note-sticky"></i> Tagihan</a></li>
                 </ul>
                 <ul class="nav side-menu">
-                  <li><a href="/users"><i class="fa fa-note-sticky"></i> Faktur</a></li>
+                  <li><a href="/faktur"><i class="fa fa-note-sticky"></i> Faktur</a></li>
                 </ul>
                 <ul class="nav side-menu">
                   <li><a href="/users"><i class="fa fa-note-sticky"></i> Pembayaran</a></li>

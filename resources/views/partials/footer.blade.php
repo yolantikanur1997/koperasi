@@ -6,7 +6,7 @@
     <!-- footer content -->
      <footer>
           <div class="pull-right">
-           Yolantika Nur
+           Koperasi Jasa Mekar Karya Bersama
           </div>
           <div class="clearfix"></div>
         </footer>

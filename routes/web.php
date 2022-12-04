@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\BankController;
+use App\Http\Controllers\FakturController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PenggunaController;
+use App\Http\Controllers\TagihanController;
 use App\Http\Controllers\TujuanController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
@@ -55,4 +57,28 @@ Route::controller(BankController::class)->group(function () {
     Route::post('/bank/update/{id}', 'update');
     Route::get('/bank/hapus/{id}', 'hapus');
 });
+Route::controller(TagihanController::class)->group(function () {
+    Route::get('/tagihan', 'index');
+    Route::get('/tagihan/cari', 'cari');
+    Route::get('/tagihan/cariStatus', 'cariStatus');
+    Route::get('/tagihan/form', 'form');
+    Route::post('/tagihan/add', 'add');
+    Route::get('/tagihan/edit/{id}', 'edit');
+    Route::post('/tagihan/update/{id}', 'update');
+    Route::get('/tagihan/hapus/{id}', 'hapus');
+    Route::get('/tagihan/cetak/{id}', 'cetak');
+});
+
+Route::controller(FakturController::class)->group(function () {
+    Route::get('/faktur', 'index');
+    Route::get('/faktur/cari', 'cari');
+    Route::get('/faktur/cariStatus', 'cariStatus');
+    Route::get('/faktur/form', 'form');
+    Route::post('/faktur/add', 'add');
+    Route::get('/faktur/edit/{id}', 'edit');
+    Route::post('/faktur/update/{id}', 'update');
+    Route::get('/faktur/hapus/{id}', 'hapus');
+    Route::get('/faktur/cetak/{id}', 'cetak');
+});
+
 });
