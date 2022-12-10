@@ -63,7 +63,7 @@
                     <ul class=" navbar-right">
                      
                     <li class="nav-item dropdown open" style="padding-left: 15px;"> 
-                    <form action="/logout" method="POST">
+                    <form  method="POST" action="/logout">
                       {{ csrf_field() }}
                       <button type="submit" class="btn btn-danger" onclick="return confirm('Anda Yakin ingin Logout?')">Logout</button>
                       </form>

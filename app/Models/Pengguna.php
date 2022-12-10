@@ -26,5 +26,10 @@ class Pengguna extends Model
         return $this->hasMany(Faktur::class);
     }
 
+    public function pembayaran(): HasMany
+    {
+        return $this->hasMany(Pembayaran::class);
+    }
+
    
 }

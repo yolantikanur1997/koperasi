@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('kode_faktur',3);
             $table->string('nomor_faktur', 100);
             $table->date('tanggal');
-            $table->string('status');
+            $table->string('status',100);
             $table->timestamps();
         });
     }
