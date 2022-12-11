@@ -29,42 +29,36 @@
           {{ $message }}
         </div>
         @enderror
-  </div>
+  </div> 
   <div class="form-group">
-    <label>Tagihan</label>
-    <select name="id_tagihan" id="id_tagihan" class="form-control select2">
+    <label>Faktur</label>
+    <select name="id_faktur" id="id_faktur" class="form-control select2">
       <option value="">Pilih</option>
-    @foreach($tagihan as $t)
-                <option value="{{$t->id}}">{{$t->nomor_tagihan}}</option>
+    @foreach($faktur as $t)
+                <option value="{{$t->id}}">{{$t->kode_faktur}} | {{$t->nomor_faktur}}</option>
                 @endforeach
                 </select>
-    @error('id_tagihan')
+    @error('id_faktur')
         <div class="invalid-feedback">
           {{ $message }}
         </div>
         @enderror
   </div> 
- 
   <div class="form-group">
-    <label>Kode Faktur</label>
-    <select name="kode_faktur" id="kode_faktur" class="form-control select2">
+    <label>Bank</label>
+    <select name="id_bank" id="id_bank" class="form-control select2">
       <option value="">Pilih</option>
-      <option value="010">010</option>
-      <option value="020">020</option>
-      <option value="030">103</option>
-      <option value="040">040</option>
-      <option value="050">050</option>
-      <option value="060">060</option>
-      <option value="070">070</option>
-      <option value="080">080</option>
-      <option value="090">090</option>
-        </select>
-    @error('kode_faktur')
+    @foreach($bank as $b)
+                <option value="{{$b->id}}">{{$b->nama}} | {{$b->akun}} | {{$b->nomor_rekening}}</option>
+                @endforeach
+                </select>
+    @error('id_bank')
         <div class="invalid-feedback">
           {{ $message }}
         </div>
         @enderror
-  </div>
+  </div> 
+
 
   <div class="form-group">
     <label>Tanggal</label>

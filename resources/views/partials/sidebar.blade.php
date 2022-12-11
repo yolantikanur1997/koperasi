@@ -41,7 +41,7 @@
                   <li><a href="/faktur"><i class="fa fa-note-sticky"></i> Faktur</a></li>
                 </ul>
                 <ul class="nav side-menu">
-                  <li><a href="/users"><i class="fa fa-note-sticky"></i> Pembayaran</a></li>
+                  <li><a href="/pembayaran"><i class="fa fa-note-sticky"></i> Pembayaran</a></li>
                 </ul>
               </div>
          

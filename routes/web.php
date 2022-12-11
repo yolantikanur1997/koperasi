@@ -3,6 +3,7 @@
 use App\Http\Controllers\BankController;
 use App\Http\Controllers\FakturController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\PenggunaController;
 use App\Http\Controllers\TagihanController;
 use App\Http\Controllers\TujuanController;
@@ -79,6 +80,18 @@ Route::controller(FakturController::class)->group(function () {
     Route::post('/faktur/update/{id}', 'update');
     Route::get('/faktur/hapus/{id}', 'hapus');
     Route::get('/faktur/cetak/{id}', 'cetak');
+});
+
+Route::controller(PembayaranController::class)->group(function () {
+    Route::get('/pembayaran', 'index');
+    Route::get('/pembayaran/cari', 'cari');
+    Route::get('/pembayaran/cariStatus', 'cariStatus');
+    Route::get('/pembayaran/form', 'form');
+    Route::post('/pembayaran/add', 'add');
+    Route::get('/pembayaran/edit/{id}', 'edit');
+    Route::post('/pembayaran/update/{id}', 'update');
+    Route::get('/pembayaran/hapus/{id}', 'hapus');
+    Route::get('/pembayaran/cetak/{id}', 'cetak');
 });
 
 });
