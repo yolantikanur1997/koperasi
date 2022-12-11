@@ -19,17 +19,12 @@
   </style>
 
   <div class="container-fluid">
-    <h1>Faktur Invoice</h1>
+    <h1>Bukti Pembayaran</h1>
     <hr>   
 
-      @foreach($faktur as $index => $k) 
+      @foreach($pembayaran as $index => $k) 
       <table style="width:100%">
         <tbody>
-          <tr>
-            <td style="width: 150px;">Kode Faktur</td>
-            <td style="width: 20px;">:</td>
-            <td> {{ $k->kode_faktur }}</td>
-          </tr>
           <tr>
             <td style="width: 150px;">Nomor Faktur</td>
             <td style="width: 20px;">:</td>
@@ -41,14 +36,9 @@
             <td> {{ $k->nomor_tagihan }}</td>
           </tr>
         <tr>
-          <td style="width: 150px;">Tanggal Faktur</td>
+          <td style="width: 150px;">Tanggal pembayaran</td>
           <td style="width: 20px;">:</td>
-          <td>{{ $k->tanggal_faktur }}</td>
-        </tr>
-        <tr>
-          <td style="width: 150px;">Tanggal Tagihan</td>
-          <td style="width: 20px;">:</td>
-          <td>{{ $k->tanggal_tagihan }}</td>
+          <td>{{ $k->tanggal_pembayaran }}</td>
         </tr>
         <tr>
           <td style="width: 150px;">Uraian</td>
@@ -59,6 +49,11 @@
           <td style="width: 150px;">Nama Tujuan</td>
           <td style="width: 20px;">:</td>
           <td>{{ $k->nama_tujuan }}</td>
+        </tr>
+        <tr>
+          <td style="width: 150px;">Bank</td>
+          <td style="width: 20px;">:</td>
+          <td>{{ $k->nama_bank }} | {{ $k->akun }} | {{ $k->nomor_rekening }}</td>
         </tr>
         <tr>
           <td style="width: 150px;">Nilai Tagihan</td>

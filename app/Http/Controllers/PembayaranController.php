@@ -8,6 +8,7 @@ use App\Models\Pembayaran;
 use App\Models\Pengguna;
 use App\Models\Tagihan;
 use App\Models\Tujuan;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -121,7 +122,7 @@ class PembayaranController extends Controller
         ->get();
 
         $faktur = Faktur::select('*')
-        ->join('tbl_pembayaran', 'tbl_faktur.id_tagihan', '=', 'tbl_pembayaran.id')
+        ->join('tbl_pembayaran', 'tbl_faktur.id', '=', 'tbl_pembayaran.id_faktur')
         ->where('tbl_pembayaran.id',$id)
         ->get();
 
@@ -137,4 +138,46 @@ class PembayaranController extends Controller
             'pembayaran' => $pembayaran
         ]);
 	}
+    
+    public function update(Request $request, $id)
+	{		
+		$pembayaran = Pembayaran::find($id)->update($request->all()); 
+				
+		return redirect('pembayaran')->with('Edit', 'Data Pembayaran Diedit');
+	}
+    
+    public function hapus($id)
+	{
+
+            $pembayaran = Pembayaran::where('id',$id)->delete();
+			return redirect('pembayaran')->with('Hapus', 'Data Pembayaran Dihapus');
+
+	}
+
+         // cetak data per id
+         public function cetak($id)
+         {
+     
+             // $tagihan = Tagihan::all();
+             $pembayaran = Pembayaran::select('tbl_pembayaran.*',
+             'tbl_pembayaran.id as id_pembayaran','tbl_pembayaran.tanggal as tanggal_pembayaran',
+             'tbl_pembayaran.status as status_pembayaran',
+             'tbl_pengguna.nama as nama_pic','tbl_faktur.*','tbl_bank.*',
+             'tbl_tagihan.*','tbl_tujuan.nama as nama_tujuan',
+             'tbl_bank.*','tbl_bank.nama as nama_bank')
+             ->join('tbl_faktur', 'tbl_faktur.id', '=', 'tbl_pembayaran.id_faktur')
+             ->join('tbl_tagihan', 'tbl_tagihan.id', '=', 'tbl_faktur.id_tagihan')
+             ->join('tbl_tujuan', 'tbl_tujuan.id', '=', 'tbl_tagihan.id_tujuan')
+             ->join('tbl_bank', 'tbl_bank.id', '=', 'tbl_pembayaran.id_bank')
+             ->join('tbl_pengguna', 'tbl_pengguna.id', '=', 'tbl_pembayaran.id_pengguna')
+             ->where('tbl_pembayaran.id',$id)
+             ->get();
+     
+             // print_r($tagihan);exit;
+      
+             $pdf = Pdf::loadview('pembayaran/pembayaran_pdf',['pembayaran'=>$pembayaran]);
+             return $pdf->stream();
+             // return $pdf->download('laporan-tagihan-pdf');
+     
+         }
 }
